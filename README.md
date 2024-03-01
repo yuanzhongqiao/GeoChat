@@ -1,227 +1,264 @@
-# GeoChat <img src="images/logo_geochat.png" height="40">: Grounded Large Vision-Language Model for Remote Sensing
-<p align="center">
-    <img src="https://i.imgur.com/waxVImv.png" alt="Oryx Video-ChatGPT">
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GeoChat </font></font><a target="_blank" rel="noopener noreferrer" href="/mbzuai-oryx/GeoChat/blob/main/images/logo_geochat.png"><img src="/mbzuai-oryx/GeoChat/raw/main/images/logo_geochat.png" height="40" style="max-width: 100%;"></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：用于遥感的接地大视觉语言模型</font></font></h1><a id="user-content-geochat--grounded-large-vision-language-model-for-remote-sensing" class="anchor-element" aria-label="永久链接：GeoChat：用于遥感的接地大型视觉语言模型" href="#geochat--grounded-large-vision-language-model-for-remote-sensing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p align="center" dir="auto">
+    <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ace7effc2b35cda2c66d5952869af563e851f89e5e1af029cfc9f69c7bebe78d/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67"><img src="https://camo.githubusercontent.com/ace7effc2b35cda2c66d5952869af563e851f89e5e1af029cfc9f69c7bebe78d/68747470733a2f2f692e696d6775722e636f6d2f77617856496d762e706e67" alt="Oryx 视频聊天GPT" data-canonical-src="https://i.imgur.com/waxVImv.png" style="max-width: 100%;"></a>
 </p>
-
-#### [Kartik Kuckreja](https://www.linkedin.com/in/kartik-kuckreja-930531221/)\*, [Muhammad Sohail Danish](https://www.linkedin.com/in/muhammad-sohail-danish/)\*, [Muzammal Naseer](https://muzammal-naseer.com/), [Abhijit Das](https://sites.google.com/site/dasabhijit2048/home), [Salman Khan](https://salman-h-khan.github.io/) and [Fahad Khan](https://sites.google.com/view/fahadkhans/home)
-\* Equally contributing first authors
-
-#### **Mohamed bin Zayed University of AI, Birla Institute of Technology & Science, Australian National University, Linkoping University**
-
-[![Website](https://img.shields.io/badge/Project-Website-87CEEB)](https://mbzuai-oryx.github.io/GeoChat)
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2311.15826)
-[![video](https://img.shields.io/badge/Video-Presentation-F9D371)](https://youtu.be/KOKtkkKpNDk)
-
----
-
-## 📢 Latest Updates
-
-- **Feb-28-24**: We open source the code, model, dataset and evaluation scripts.
-- **Feb-27-24**: GeoChat has been accepted to **CVPR-24** 🎉. 
-- **Nov-28-23**: GeoChat paper is released [arxiv link](https://arxiv.org/abs/2311.15826). 🔥🔥
----
-
-
-
-## <img src="images/logo_geochat.png" height="40">Overview
-
-GeoChat is the first grounded Large Vision Language Model, specifically tailored to Remote Sensing(RS) scenarios. Unlike general-domain models, GeoChat excels in handling high-resolution RS imagery, employing region-level reasoning for comprehensive scene interpretation. Leveraging a newly created RS multimodal dataset, GeoChat is fine-tuned using the LLaVA-1.5 architecture. This results in robust zero-shot performance across various RS tasks, including image and region captioning, visual question answering, scene classification, visually grounded conversations, and referring object detection.
-
----
-## Contents
-- [Install](#install)
-- [Model Zoo](https://github.com/mbzuai-oryx/GeoChat/blob/main/docs/MODEL_ZOO.md)
-- [Dataset](https://huggingface.co/datasets/MBZUAI/GeoChat_Instruct/blob/main/GeoChat_Instruct.json)
-- [Train](#train)
-- [Evaluation](#evaluation)
-
-## Install
-
-1. Clone this repository and navigate to LLaVA folder
-```bash
-git clone https://github.com/mbzuai-oryx/GeoChat.git
-cd GeoChat
-```
-
-2. Install Package
-```Shell
-conda create -n geochat python=3.10 -y
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><a href="https://www.linkedin.com/in/kartik-kuckreja-930531221/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kartik Ku&ZeroWidthSpace;&ZeroWidthSpace;ckreja</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> *、</font></font><a href="https://www.linkedin.com/in/muhammad-sohail-danish/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Muhammad Sohail Dutch</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> *、</font></font><a href="https://muzammal-naseer.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Muzammal Naseer</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://sites.google.com/site/dasabhijit2048/home" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Abhijit Das</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://salman-h-khan.github.io/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Salman Khan</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://sites.google.com/view/fahadkhans/home" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fahad Khan</font></font></a></h4><a id="user-content-kartik-kuckreja-muhammad-sohail-danish-muzammal-naseer-abhijit-das-salman-khan-and-fahad-khan" class="anchor-element" aria-label="永久链接：Kartik Ku&ZeroWidthSpace;&ZeroWidthSpace;ckreja*、Muhammad Sohail Dutch*、Muzammal Naseer、Abhijit Das、Salman Khan 和 Fahad Khan" href="#kartik-kuckreja-muhammad-sohail-danish-muzammal-naseer-abhijit-das-salman-khan-and-fahad-khan"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">* 同等贡献的第一作者</font></font></p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">穆罕默德·本·扎耶德人工智能大学、比尔拉技术与科学研究所、澳大利亚国立大学、林雪平大学</font></font></strong></h4><a id="user-content-mohamed-bin-zayed-university-of-ai-birla-institute-of-technology--science-australian-national-university-linkoping-university" class="anchor-element" aria-label="永久链接：穆罕默德·本·扎耶德人工智能大学、比尔拉技术与科学研究所、澳大利亚国立大学、林雪平大学" href="#mohamed-bin-zayed-university-of-ai-birla-institute-of-technology--science-australian-national-university-linkoping-university"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://mbzuai-oryx.github.io/GeoChat" rel="nofollow"><img src="https://camo.githubusercontent.com/9d93520a9d63c643d9328caf5d36bfe34c58d6d46a8e3c6e251a22268e87f19b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50726f6a6563742d576562736974652d383743454542" alt="网站" data-canonical-src="https://img.shields.io/badge/Project-Website-87CEEB" style="max-width: 100%;"></a>
+<a href="https://arxiv.org/abs/2311.15826" rel="nofollow"><img src="https://camo.githubusercontent.com/c0fc025b8330e35180f3f3303b3785ab20adcc93df173056f5bdc08fea6de30b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f61725869762d50617065722d253343434f4c4f522533452e737667" alt="纸" data-canonical-src="https://img.shields.io/badge/arXiv-Paper-%3CCOLOR%3E.svg" style="max-width: 100%;"></a>
+<a href="https://youtu.be/KOKtkkKpNDk" rel="nofollow"><img src="https://camo.githubusercontent.com/abab6e1025545d6ba7f5a35c8ea67ab3acbe1076e715a6311c1ca4ef77b3060a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f566964656f2d50726573656e746174696f6e2d463944333731" alt="视频" data-canonical-src="https://img.shields.io/badge/Video-Presentation-F9D371" style="max-width: 100%;"></a></p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">📢最新更新</font></font></h2><a id="user-content--latest-updates" class="anchor-element" aria-label="永久链接：📢最新更新" href="#-latest-updates"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">24 年 2 月 28 日</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：我们开源代码、模型、数据集和评估脚本。</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">24 年 2 月 27 日</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：GeoChat 已被</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CVPR-24</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">接受。</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">23 年 11 月 28 日</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：GeoChat 论文发布</font></font><a href="https://arxiv.org/abs/2311.15826" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arxiv 链接</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">🔥🔥</font></font></li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><a target="_blank" rel="noopener noreferrer" href="/mbzuai-oryx/GeoChat/blob/main/images/logo_geochat.png"><img src="/mbzuai-oryx/GeoChat/raw/main/images/logo_geochat.png" height="40" style="max-width: 100%;"></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">概述</font></font></h2><a id="user-content-overview" class="anchor-element" aria-label="永久链接：概述" href="#overview"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GeoChat 是第一个落地的大视觉语言模型，专门针对遥感（RS）场景而定制。</font><font style="vertical-align: inherit;">与通用域模型不同，GeoChat 擅长处理高分辨率 RS 图像，采用区域级推理进行全面的场景解释。</font><font style="vertical-align: inherit;">利用新创建的 RS 多模态数据集，GeoChat 使用 LLaVA-1.5 架构进行了微调。</font><font style="vertical-align: inherit;">这可以在各种 RS 任务中实现强大的零样本性能，包括图像和区域字幕、视觉问答、场景分类、视觉基础对话和引用对象检测。</font></font></p>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">内容</font></font></h2><a id="user-content-contents" class="anchor-element" aria-label="永久链接： 内容" href="#contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="#install"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></a></li>
+<li><a href="https://github.com/mbzuai-oryx/GeoChat/blob/main/docs/MODEL_ZOO.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模型动物园</font></font></a></li>
+<li><a href="https://huggingface.co/datasets/MBZUAI/GeoChat_Instruct/blob/main/GeoChat_Instruct.json" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数据集</font></font></a></li>
+<li><a href="#train"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">火车</font></font></a></li>
+<li><a href="#evaluation"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">评估</font></font></a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></h2><a id="user-content-install" class="anchor-element" aria-label="永久链接：安装" href="#install"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">克隆此存储库并导航到 LLaVA 文件夹</font></font></li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>git clone https://github.com/mbzuai-oryx/GeoChat.git
+<span class="pl-c1">cd</span> GeoChat</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="git clone https://github.com/mbzuai-oryx/GeoChat.git
+cd GeoChat" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<ol start="2" dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装包</font></font></li>
+</ol>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>conda create -n geochat python=3.10 -y
+conda activate geochat
+pip install --upgrade pip  <span class="pl-c"><span class="pl-c">#</span> enable PEP 660 support</span>
+pip install -e <span class="pl-c1">.</span></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="conda create -n geochat python=3.10 -y
 conda activate geochat
 pip install --upgrade pip  # enable PEP 660 support
-pip install -e .
-```
-
-3. Install additional packages for training cases
-```
-pip install ninja
+pip install -e ." tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<ol start="3" dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为培训案例安装附加包</font></font></li>
+</ol>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>pip install ninja
 pip install flash-attn --no-build-isolation
-```
-
-### Upgrade to latest code base
-
-```Shell
-git pull
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install ninja
+pip install flash-attn --no-build-isolation" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">升级到最新的代码库</font></font></h3><a id="user-content-upgrade-to-latest-code-base" class="anchor-element" aria-label="永久链接：升级到最新的代码库" href="#upgrade-to-latest-code-base"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>git pull
 pip uninstall transformers
-pip install -e .
-```
-
-## GeoChat Weights and Demo
-Please check out our [Model Zoo](https://github.com/mbzuai-oryx/GeoChat/blob/main/docs/MODEL_ZOO.md) for all public GeoChat checkpoints, and check [LoRA.md](https://github.com/mbzuai-oryx/GeoChat/blob/main/docs/LoRA.md) for instructions on how to run the demo and training.
-
-## Train
-
-GeoChat training consists of visual instruction tuning using GeoChat_Instruct Dataset: 318k Vicuna-generated multimodal instruction-following data, finetuned over the pretrained weights of LlaVA-v1.5.
-
-We train GeoChat on 3 A100 GPUs with 40GB memory. To train on fewer GPUs, you can reduce the `per_device_train_batch_size` and increase the `gradient_accumulation_steps` accordingly. Always keep the global batch size the same: `per_device_train_batch_size` x `gradient_accumulation_steps` x `num_gpus`.
-
-### Hyperparameters
-We use a similar set of hyperparameters as Vicuna in finetuning.  Both hyperparameters used in pretraining and finetuning are provided below.
-
-| Hyperparameter | Global Batch Size | Learning rate | Epochs | Max length | Weight decay |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| GeoChat-7B | 144 | 2e-5 | 1 | 2048 | 0 |
-
-### Pretrain (feature alignment)
-
-We use the pretrained projector from LLaVAv1.5, which is trained on 558K subset of the LAION-CC-SBU dataset with BLIP captions. It takes around 3.5 hours for LLaVA-v1.5-7B.
-
-- `--mm_projector_type mlp2x_gelu`: the two-layer MLP vision-language connector.
-- `--vision_tower openai/clip-vit-large-patch14-336`: CLIP ViT-L/14 336px.
-
-### Visual Instruction Tuning
-
-1. Prepare data
-
-Please download the annotation of the final mixture of our instruction tuning data [GeoChat_Instruct.json](https://huggingface.co/datasets/MBZUAI/GeoChat_Instruct/blob/main/GeoChat_Instruct.json), and download the split image zips from the [hugging face](https://huggingface.co/datasets/MBZUAI/GeoChat_Instruct). Save the multiple image zips in a single folder and run the following command to merge them:
-```Shell
-cat images_parta* > images.zip
-```
-Unzip the images.zip file to a folder and give the folder's path in [finetune_lora.sh](https://github.com/mbzuai-oryx/GeoChat/blob/main/scripts/finetune_lora.sh).
-
-2. Start training!
-
-Visual instruction tuning takes more time due to the increased resolution of CLIP to 504X504. It takes around ~25 hours to finetune GeoChat-7B on 3x A100 (40G).
-
-Training script with DeepSpeed ZeRO-3: [`finetune_lora.sh`](https://github.com/mbzuai-oryx/GeoChat/blob/main/scripts/finetune_lora.sh).
-
-Options to note:
-
-- `--mm_projector_type mlp2x_gelu`: the two-layer MLP vision-language connector.
-- `--vision_tower openai/clip-vit-large-patch14-336`: CLIP ViT-L/14 336px.
-- `--image_aspect_ratio pad`: this pads the non-square images to square, instead of cropping them; it slightly reduces hallucination.
-- `--group_by_modality_length True`: this should only be used when your instruction tuning dataset contains both language (e.g. ShareGPT) and multimodal (e.g. LLaVA-Instruct).
-- 
-## Evaluation
-
-We evaluate GeoChat on a diverse set of 7 benchmarks. To ensure the reproducibility, we evaluate the models with greedy decoding. We do not evaluate using beam search to make the inference process consistent with the chat demo of real-time outputs.
-See [Evaluation.md](https://github.com/mbzuai-oryx/GeoChat/blob/main/docs/Evaluation.md).
-
-## 🏆 Contributions
-
-- **RS multimodal instruction following dataset.** We present a novel data generation pipeline, to leverage existing object detection dataset to create short descriptions of the images, followed by using Vicuna-v1.5 to create conversations using the generated text alone. Further, we add visual question-answering and scene classification abilities 
- using their corresponding datasets. This results in a total of 318k instruction pairs for RS domain.
-- **GeoChat.** Leveraging our dataset, we finetune LLaVA-1.5 to create the remote sensing-domain vision-language model - GeoChat. Our LoRA fine-tuning is efficient and avoids forgetting the necessary context embedded in fully-tuned LLaVA model, whose MLP projection is trained to align images into the word embedding space of the LLM (Vicuna-v1.5). This allows GeoChat to retain the conversation and instruction following abilities of LLaVA and extend its domain-knowledge to remote sensing tasks.  
-
-- **Evaluation Benchmark.** We also address the lack of evaluation benchmarks to assess the capability of existing VLMs on remote-sensing conversations. To this end, we setup evaluation protocols for conversation grounding in RS, as well as a setup a suite of tasks to allow comparisons with future efforts in this direction. We show various supervised as well as  zero-shot evaluations for different remote sensing tasks, including image captioning, visual question answering and scene classification to demonstrate the generalisability of GeoChat conversational VLM.
-
----
-## 👁️💬 GeoChat : Grounded Large Vision-Language Model for Remote Sensing
-
-GeoChat can accomplish multiple tasks for remote-sensing (RS) image comprehension in a unified framework. Given suitable task tokens and user queries, the model can generate visually grounded responses (text with corresponding object locations - shown on top), visual question answering on images and regions (top left and bottom right, respectively) as well as scene classification (top right) and normal natural language conversations (bottom). This makes it the first RS VLM with grounding capability. 
-
-<p align="center">
-  <img src="images/overview2.png" alt="GeoChat Overview">
+pip install -e <span class="pl-c1">.</span></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="git pull
+pip uninstall transformers
+pip install -e ." tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GeoChat 权重和演示</font></font></h2><a id="user-content-geochat-weights-and-demo" class="anchor-element" aria-label="永久链接：GeoChat 权重和演示" href="#geochat-weights-and-demo"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请查看我们的</font></font><a href="https://github.com/mbzuai-oryx/GeoChat/blob/main/docs/MODEL_ZOO.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Model Zoo</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以了解所有公共 GeoChat 检查点，并查看</font></font><a href="https://github.com/mbzuai-oryx/GeoChat/blob/main/docs/LoRA.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LoRA.md</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以获取有关如何运行演示和训练的说明。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">火车</font></font></h2><a id="user-content-train" class="anchor-element" aria-label="永久链接： 火车" href="#train"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GeoChat 训练包括使用 GeoChat_Instruct 数据集进行视觉指令调整：318k Vicuna 生成的多模式指令跟踪数据，在 LlaVA-v1.5 的预训练权重上进行微调。</font></font></p>
+<p dir="auto">We train GeoChat on 3 A100 GPUs with 40GB memory. To train on fewer GPUs, you can reduce the <code>per_device_train_batch_size</code> and increase the <code>gradient_accumulation_steps</code> accordingly. Always keep the global batch size the same: <code>per_device_train_batch_size</code> x <code>gradient_accumulation_steps</code> x <code>num_gpus</code>.</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Hyperparameters</h3><a id="user-content-hyperparameters" class="anchor-element" aria-label="永久链接：超参数" href="#hyperparameters"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">We use a similar set of hyperparameters as Vicuna in finetuning.  Both hyperparameters used in pretraining and finetuning are provided below.</p>
+<table>
+<thead>
+<tr>
+<th>Hyperparameter</th>
+<th align="right">Global Batch Size</th>
+<th align="right">Learning rate</th>
+<th align="right">Epochs</th>
+<th align="right">Max length</th>
+<th align="right">Weight decay</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GeoChat-7B</td>
+<td align="right">144</td>
+<td align="right">2e-5</td>
+<td align="right">1</td>
+<td align="right">2048</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Pretrain (feature alignment)</h3><a id="user-content-pretrain-feature-alignment" class="anchor-element" aria-label="永久链接：预训练（特征对齐）" href="#pretrain-feature-alignment"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">We use the pretrained projector from LLaVAv1.5, which is trained on 558K subset of the LAION-CC-SBU dataset with BLIP captions. It takes around 3.5 hours for LLaVA-v1.5-7B.</p>
+<ul dir="auto">
+<li><code>--mm_projector_type mlp2x_gelu</code>: the two-layer MLP vision-language connector.</li>
+<li><code>--vision_tower openai/clip-vit-large-patch14-336</code>: CLIP ViT-L/14 336px.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Visual Instruction Tuning</h3><a id="user-content-visual-instruction-tuning" class="anchor-element" aria-label="永久链接：视觉指令调整" href="#visual-instruction-tuning"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li>Prepare data</li>
+</ol>
+<p dir="auto">Please download the annotation of the final mixture of our instruction tuning data <a href="https://huggingface.co/datasets/MBZUAI/GeoChat_Instruct/blob/main/GeoChat_Instruct.json" rel="nofollow">GeoChat_Instruct.json</a>, and download the split image zips from the <a href="https://huggingface.co/datasets/MBZUAI/GeoChat_Instruct" rel="nofollow">hugging face</a>. Save the multiple image zips in a single folder and run the following command to merge them:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>cat images_parta<span class="pl-k">*</span> <span class="pl-k">&gt;</span> images.zip</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="cat images_parta* > images.zip" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Unzip the images.zip file to a folder and give the folder's path in <a href="https://github.com/mbzuai-oryx/GeoChat/blob/main/scripts/finetune_lora.sh">finetune_lora.sh</a>.</p>
+<ol start="2" dir="auto">
+<li>Start training!</li>
+</ol>
+<p dir="auto">Visual instruction tuning takes more time due to the increased resolution of CLIP to 504X504. It takes around ~25 hours to finetune GeoChat-7B on 3x A100 (40G).</p>
+<p dir="auto">Training script with DeepSpeed ZeRO-3: <a href="https://github.com/mbzuai-oryx/GeoChat/blob/main/scripts/finetune_lora.sh"><code>finetune_lora.sh</code></a>.</p>
+<p dir="auto">Options to note:</p>
+<ul dir="auto">
+<li><code>--mm_projector_type mlp2x_gelu</code>: the two-layer MLP vision-language connector.</li>
+<li><code>--vision_tower openai/clip-vit-large-patch14-336</code>: CLIP ViT-L/14 336px.</li>
+<li><code>--image_aspect_ratio pad</code>: this pads the non-square images to square, instead of cropping them; it slightly reduces hallucination.</li>
+<li><code>--group_by_modality_length True</code>: this should only be used when your instruction tuning dataset contains both language (e.g. ShareGPT) and multimodal (e.g. LLaVA-Instruct).</li>
+<li></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Evaluation</h2><a id="user-content-evaluation" class="anchor-element" aria-label="永久链接：评估" href="#evaluation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">We evaluate GeoChat on a diverse set of 7 benchmarks. To ensure the reproducibility, we evaluate the models with greedy decoding. We do not evaluate using beam search to make the inference process consistent with the chat demo of real-time outputs.
+See <a href="https://github.com/mbzuai-oryx/GeoChat/blob/main/docs/Evaluation.md">Evaluation.md</a>.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">🏆 Contributions</h2><a id="user-content--contributions" class="anchor-element" aria-label="永久链接：🏆 贡献" href="#-contributions"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>
+<p dir="auto"><strong>RS multimodal instruction following dataset.</strong> We present a novel data generation pipeline, to leverage existing object detection dataset to create short descriptions of the images, followed by using Vicuna-v1.5 to create conversations using the generated text alone. Further, we add visual question-answering and scene classification abilities
+using their corresponding datasets. This results in a total of 318k instruction pairs for RS domain.</p>
+</li>
+<li>
+<p dir="auto"><strong>GeoChat.</strong> Leveraging our dataset, we finetune LLaVA-1.5 to create the remote sensing-domain vision-language model - GeoChat. Our LoRA fine-tuning is efficient and avoids forgetting the necessary context embedded in fully-tuned LLaVA model, whose MLP projection is trained to align images into the word embedding space of the LLM (Vicuna-v1.5). This allows GeoChat to retain the conversation and instruction following abilities of LLaVA and extend its domain-knowledge to remote sensing tasks.</p>
+</li>
+<li>
+<p dir="auto"><strong>Evaluation Benchmark.</strong> We also address the lack of evaluation benchmarks to assess the capability of existing VLMs on remote-sensing conversations. To this end, we setup evaluation protocols for conversation grounding in RS, as well as a setup a suite of tasks to allow comparisons with future efforts in this direction. We show various supervised as well as  zero-shot evaluations for different remote sensing tasks, including image captioning, visual question answering and scene classification to demonstrate the generalisability of GeoChat conversational VLM.</p>
+</li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">👁️💬 GeoChat : Grounded Large Vision-Language Model for Remote Sensing</h2><a id="user-content-️-geochat--grounded-large-vision-language-model-for-remote-sensing" class="anchor-element" aria-label="永久链接：👁️💬 GeoChat：用于遥感的接地大视觉语言模型" href="#️-geochat--grounded-large-vision-language-model-for-remote-sensing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">GeoChat can accomplish multiple tasks for remote-sensing (RS) image comprehension in a unified framework. Given suitable task tokens and user queries, the model can generate visually grounded responses (text with corresponding object locations - shown on top), visual question answering on images and regions (top left and bottom right, respectively) as well as scene classification (top right) and normal natural language conversations (bottom). This makes it the first RS VLM with grounding capability.</p>
+<p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="/mbzuai-oryx/GeoChat/blob/main/images/overview2.png"><img src="/mbzuai-oryx/GeoChat/raw/main/images/overview2.png" alt="GeoChat 概述" style="max-width: 100%;"></a>
 </p>
-
----
-
-## 🛰️ GeoChat : Architecture
-
-An overview of GeoChat - the first grounded large vision-language model for remote sensing. Given an image input together with a user query, a visual backbone is first used to encode patch-level tokens at a higher resolution via interpolating positional encodings. A multi-layer perceptron (MLP) is used to adapt vision-tokens to language space suitable for input to a Large Language Model (Vicuna 1.5). Besides visual inputs, region locations can also be input to the model together with task-specific prompts that specify the desired task required by the user. Given this context, the LLM can generate natural language responses interleaved with corresponding object locations. GeoChat can perform multiple tasks as shown on top e.g., scene classification, image/region captioning, VQA and grounded conversations.
-
-<p align="center">
-  <img src="images/architecture.png" alt="GeoChat Architectural">
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">🛰️ GeoChat : Architecture</h2><a id="user-content-️-geochat--architecture" class="anchor-element" aria-label="永久链接：🛰️ GeoChat：建筑" href="#️-geochat--architecture"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">An overview of GeoChat - the first grounded large vision-language model for remote sensing. Given an image input together with a user query, a visual backbone is first used to encode patch-level tokens at a higher resolution via interpolating positional encodings. A multi-layer perceptron (MLP) is used to adapt vision-tokens to language space suitable for input to a Large Language Model (Vicuna 1.5). Besides visual inputs, region locations can also be input to the model together with task-specific prompts that specify the desired task required by the user. Given this context, the LLM can generate natural language responses interleaved with corresponding object locations. GeoChat can perform multiple tasks as shown on top e.g., scene classification, image/region captioning, VQA and grounded conversations.</p>
+<p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="/mbzuai-oryx/GeoChat/blob/main/images/architecture.png"><img src="/mbzuai-oryx/GeoChat/raw/main/images/architecture.png" alt="GeoChat 建筑" style="max-width: 100%;"></a>
 </p>
-
----
-
-## 🔍 RS Multimodal Instruction Dataset
-
-Types of annotations available in the GeoChat instruction-set. For a given RS image, we obtain object attribute and relationship information, referring expressions and region captions along with their corresponding region annotations (shown over the image). This structured information is used to create the rich instruction-set with a total of 318k image-instruction pairs.
-
-<p align="center">
-  <img src="images/dataset.png" alt="Dataset Annotation Pipeline">
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">🔍 RS Multimodal Instruction Dataset</h2><a id="user-content--rs-multimodal-instruction-dataset" class="anchor-element" aria-label="永久链接：🔍 RS 多模态指令数据集" href="#-rs-multimodal-instruction-dataset"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto">Types of annotations available in the GeoChat instruction-set. For a given RS image, we obtain object attribute and relationship information, referring expressions and region captions along with their corresponding region annotations (shown over the image). This structured information is used to create the rich instruction-set with a total of 318k image-instruction pairs.</p>
+<p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="/mbzuai-oryx/GeoChat/blob/main/images/dataset.png"><img src="/mbzuai-oryx/GeoChat/raw/main/images/dataset.png" alt="数据集注释管道" style="max-width: 100%;"></a>
 </p>
-
-
-
-## 🤖 Qualitative results of GeoChat
-
-Qualitative results of GeoChat. (<em>left-right</em>) Results are shown on grounding, referring object detection, and disaster/damage detection. The user can provide task-specific tokens (e.g., <strong>[grounding]</strong>) to shape model responses according to the desired behavior. The model can generate textual responses (<em>right</em>), only visual grounding (<em>center</em>) and both text and object groundings interleaved together (<em>left</em>). The model can also specify object types, object counts, object attributes and object relationships.
-<p align="center">
-  <img src="images/examples.png" alt="Results_GCG">
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">🤖 Qualitative results of GeoChat</h2><a id="user-content--qualitative-results-of-geochat" class="anchor-element" aria-label="永久链接：🤖 GeoChat 的定性结果" href="#-qualitative-results-of-geochat"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GeoChat 的定性结果。</font><font style="vertical-align: inherit;">（</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">左-右</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）显示接地、参考对象检测和灾难/损坏检测的结果。</font><font style="vertical-align: inherit;">用户可以提供特定于任务的标记（例如，</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[接地]</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）以根据所需的行为塑造模型响应。</font><font style="vertical-align: inherit;">该模型可以生成文本响应（</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">右</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）、仅生成视觉基础（</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）以及交织在一起的文本和对象基础（</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">左</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）。</font><font style="vertical-align: inherit;">该模型还可以指定对象类型、对象计数、对象属性和对象关系。</font></font></p>
+<p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="/mbzuai-oryx/GeoChat/blob/main/images/examples.png"><img src="/mbzuai-oryx/GeoChat/raw/main/images/examples.png" alt="结果_GCG" style="max-width: 100%;"></a>
 </p>
-
----
-
-## 🤖 Visual Question Answering
-Qualitative examples for Visual Question Answering tasks. GeoChat is able to hold multi-turn conversations, based on various types of questions, including presence, count, complex comparisons and so on. It is able to detect objects and hold conversations against low resolution images as well.
-<p align="center">
-  <img src="images/vqa.jpg" alt="Visual Question Answering">
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🤖 视觉问答</font></font></h2><a id="user-content--visual-question-answering" class="anchor-element" aria-label="永久链接：🤖 视觉问答" href="#-visual-question-answering"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视觉问答任务的定性示例。</font><font style="vertical-align: inherit;">GeoChat 能够根据各种类型的问题进行多轮对话，包括存在、计数、复杂比较等。</font><font style="vertical-align: inherit;">它也能够检测物体并针对低分辨率图像进行对话。</font></font></p>
+<p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="/mbzuai-oryx/GeoChat/blob/main/images/vqa.jpg"><img src="/mbzuai-oryx/GeoChat/raw/main/images/vqa.jpg" alt="视觉问答" style="max-width: 100%;"></a>
 </p>
-
----
-
-## 🤖 Scene Classification
-Qualitative examples for scene classification. We give the model all the classes from the dataset and ask to choose only one.
-<p align="center">
-  <img src="images/scene.jpg" alt="Visual Question Answering">
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🤖 场景分类</font></font></h2><a id="user-content--scene-classification" class="anchor-element" aria-label="永久链接：🤖场景分类" href="#-scene-classification"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">场景分类的定性示例。</font><font style="vertical-align: inherit;">我们为模型提供数据集中的所有类别，并要求仅选择一个类别。</font></font></p>
+<p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="/mbzuai-oryx/GeoChat/blob/main/images/scene.jpg"><img src="/mbzuai-oryx/GeoChat/raw/main/images/scene.jpg" alt="视觉问答" style="max-width: 100%;"></a>
 </p>
-
----
-
-## 🤖 Grounded Description
-When asked to describe the image with the special token '[grounding]', GeoChat outputs both the description of the image as well as the bounding boxes for all the objects detected.
-<p align="center">
-  <img src="images/grounded.jpg" alt="Grounded Description">
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🤖 接地气的描述</font></font></h2><a id="user-content--grounded-description" class="anchor-element" aria-label="永久链接：🤖 接地描述" href="#-grounded-description"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">当要求使用特殊标记“[grounding]”描述图像时，GeoChat 会输出图像的描述以及所有检测到的对象的边界框。</font></font></p>
+<p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="/mbzuai-oryx/GeoChat/blob/main/images/grounded.jpg"><img src="/mbzuai-oryx/GeoChat/raw/main/images/grounded.jpg" alt="接地说明" style="max-width: 100%;"></a>
 </p>
-
----
-
-## 🤖 Referring Expression
-When asked about an object as a referred expression, GeoChat is able to locate it and draw rotated bounding boxes around it correspondingly.
-<p align="center">
-  <img src="images/ref1.jpg" alt="Referring Expression">
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🤖 指称表达</font></font></h2><a id="user-content--referring-expression" class="anchor-element" aria-label="永久链接：🤖 引用表达" href="#-referring-expression"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">当询问某个对象作为引用表达式时，GeoChat 能够找到它并相应地在其周围绘制旋转边界框。</font></font></p>
+<p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="/mbzuai-oryx/GeoChat/blob/main/images/ref1.jpg"><img src="/mbzuai-oryx/GeoChat/raw/main/images/ref1.jpg" alt="指称表达" style="max-width: 100%;"></a>
 </p>
-<p align="center">
-  <img src="images/ref_2.jpg" alt="Referring Expression">
+<p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="/mbzuai-oryx/GeoChat/blob/main/images/ref_2.jpg"><img src="/mbzuai-oryx/GeoChat/raw/main/images/ref_2.jpg" alt="指称表达" style="max-width: 100%;"></a>
 </p>
-
----
-
-## 🤖 Region Caption
-Qualitative examples for region-based captioning. Given a bounding box, GeoChat is able to provide brief descriptions about the area or the object covered by the bounding box.
-<p align="center">
-  <img src="images/iden.jpg" alt="Region Caption">
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🤖 区域标题</font></font></h2><a id="user-content--region-caption" class="anchor-element" aria-label="永久链接：🤖 区域标题" href="#-region-caption"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">基于区域的字幕的定性示例。</font><font style="vertical-align: inherit;">给定一个边界框，GeoChat 能够提供有关边界框覆盖的区域或对象的简要描述。</font></font></p>
+<p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="/mbzuai-oryx/GeoChat/blob/main/images/iden.jpg"><img src="/mbzuai-oryx/GeoChat/raw/main/images/iden.jpg" alt="区域标题" style="max-width: 100%;"></a>
 </p>
-
----
-
-## 📜 Citation
-```bibtex
-@misc{kuckreja2023geochat,
+<hr>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">📜 引文</font></font></h2><a id="user-content--citation" class="anchor-element" aria-label="永久链接：📜 引文" href="#-citation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="highlight highlight-text-bibtex notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">@misc</span>{<span class="pl-en">kuckreja2023geochat</span>,
+      <span class="pl-s">title</span>=<span class="pl-s"><span class="pl-pds">{</span>GeoChat: Grounded Large Vision-Language Model for Remote Sensing<span class="pl-pds">}</span></span>, 
+      <span class="pl-s">author</span>=<span class="pl-s"><span class="pl-pds">{</span>Kartik Kuckreja and Muhammad Sohail Danish and Muzammal Naseer and Abhijit Das and Salman Khan and Fahad Shahbaz Khan<span class="pl-pds">}</span></span>,
+      <span class="pl-s">year</span>=<span class="pl-s"><span class="pl-pds">{</span>2023<span class="pl-pds">}</span></span>,
+      <span class="pl-s">eprint</span>=<span class="pl-s"><span class="pl-pds">{</span>2311.15826<span class="pl-pds">}</span></span>,
+      <span class="pl-s">archivePrefix</span>=<span class="pl-s"><span class="pl-pds">{</span>arXiv<span class="pl-pds">}</span></span>,
+      <span class="pl-s">primaryClass</span>=<span class="pl-s"><span class="pl-pds">{</span>cs.CV<span class="pl-pds">}</span></span>
+}<span class="pl-c">  </span></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@misc{kuckreja2023geochat,
       title={GeoChat: Grounded Large Vision-Language Model for Remote Sensing}, 
       author={Kartik Kuckreja and Muhammad Sohail Danish and Muzammal Naseer and Abhijit Das and Salman Khan and Fahad Shahbaz Khan},
       year={2023},
       eprint={2311.15826},
       archivePrefix={arXiv},
       primaryClass={cs.CV}
-}  
-```
-## 🙏 Acknowledgement
-We are thankful to LLaVA and Vicuna for releasing their models and code as open-source contributions.
-
----
-[<img src="images/IVAL_logo.png" width="200" height="100">](https://www.ival-mbzuai.com)
-[<img src="images/Oryx_logo.png" width="100" height="100">](https://github.com/mbzuai-oryx)
-[<img src="images/MBZUAI_logo.png" width="360" height="85">](https://mbzuai.ac.ae)
+}  " tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🙏致谢</font></font></h2><a id="user-content--acknowledgement" class="anchor-element" aria-label="永久链接：🙏致谢" href="#-acknowledgement"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们感谢 LLaVA 和 Vicuna 将他们的模型和代码作为开源贡献发布。</font></font></p>
+<hr>
+<p dir="auto"><a href="https://www.ival-mbzuai.com" rel="nofollow"><img src="/mbzuai-oryx/GeoChat/raw/main/images/IVAL_logo.png" width="200" height="100" style="max-width: 100%;"></a>
+<a href="https://github.com/mbzuai-oryx"><img src="/mbzuai-oryx/GeoChat/raw/main/images/Oryx_logo.png" width="100" height="100" style="max-width: 100%;"></a>
+<a href="https://mbzuai.ac.ae" rel="nofollow"><img src="/mbzuai-oryx/GeoChat/raw/main/images/MBZUAI_logo.png" width="360" height="85" style="max-width: 100%;"></a></p>
+</article></div>
